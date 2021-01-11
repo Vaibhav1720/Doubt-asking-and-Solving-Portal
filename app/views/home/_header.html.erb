@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Coding Ninja</a>
+
+
+        <li class="nav-item">
+             <%= link_to "Teacher", root_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+             <%= link_to "Doubts", doubts_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Student", home_about_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Ask Doubt", new_doubt_path, class: "nav-link active" %>
+        </li>
+
+    </div>
+  </div>
+</nav>

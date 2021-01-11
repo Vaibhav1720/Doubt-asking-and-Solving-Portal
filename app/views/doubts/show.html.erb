@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @doubt.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @doubt.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @doubt.status %>
+</p>
+
+<%= link_to 'Edit', edit_doubt_path(@doubt) %> |
+<%= link_to 'Back', doubts_path %>
