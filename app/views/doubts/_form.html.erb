@@ -11,21 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="field form-group">
+    <% form.label :title %>
+    <%= form.text_field :title, class:"form-control",placeholder:"Title" %>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+  <br>
+  <div class="field form-group">
+    <% form.label :description %>
+    <%= form.text_field :description, class:"form-control", placeholder:"Write your doubt" %>
   </div>
-
-  <div class="field">
+  <br>
+  <div class="field form-group">
     <%= form.label :status %>
-    <%= form.text_field :status %>
+    <%= form.text_field :status, class:"form-control", placeholder:"unresolved" %>
   </div>
-
+  <br>
   <div class="actions">
     <%= form.submit %>
   </div>

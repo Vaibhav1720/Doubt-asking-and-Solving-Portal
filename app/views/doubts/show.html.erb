@@ -1,19 +1,30 @@
 <p id="notice"><%= notice %></p>
+<style type="text/css">
+    .jumbotron {
+      padding: 4rem 2rem;
+      margin-bottom: 2rem;
+      background-color: var(--bs-light);
+      border-radius: .3rem;  
+    }
+</style>
 
-<p>
-  <strong>Title:</strong>
-  <%= @doubt.title %>
-</p>
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @doubt.title %>
+    <br>
+  </h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @doubt.description %>
-</p>
+  <p class="lead">
+      <%= @doubt.description %>
+  <hr class="my-4">
+    <%= link_to 'Edit', edit_doubt_path(@doubt), class:"btn btn-dark" %> 
+    <%= link_to 'Back', doubts_path, class:"btn btn-dark" %>
+    <br><br>
+      <strong>Status:</strong>
+      <%= @doubt.status %>
+</div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @doubt.status %>
-</p>
 
-<%= link_to 'Edit', edit_doubt_path(@doubt) %> |
-<%= link_to 'Back', doubts_path %>
+
+
+
