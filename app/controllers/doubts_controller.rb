@@ -1,12 +1,12 @@
 class DoubtsController < ApplicationController
-  before_action :set_doubt, only: [:show, :edit, :update, :destroy]
+  before_action :set_doubt, only: [:show, :edit, :update, :destroy, :resolve]
   before_action :authenticate_user!, except: [:index, :show]
   # GET /doubts
   # GET /doubts.json
   def index
     @doubts = Doubt.all
   end
-
+ 
   # GET /doubts/1
   # GET /doubts/1.json
   def show
@@ -19,6 +19,9 @@ class DoubtsController < ApplicationController
 
   # GET /doubts/1/edit
   def edit
+  end
+
+  def resolve
   end
 
   # POST /doubts
@@ -66,10 +69,12 @@ class DoubtsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_doubt
       @doubt = Doubt.find(params[:id])
+      #@doubt = Doubt.find_by(id: params[:id])
+      #@doubt = Doubt.require(:doubt).permit(:title, :description)
     end
 
     # Only allow a list of trusted parameters through.
     def doubt_params
-      params.require(:doubt).permit(:title, :description, :status, :user_id,:doubt_id)
+      params.require(:doubt).permit(:title, :description, :status, :user_id,:doubt_id, :comment_id)
     end
 end

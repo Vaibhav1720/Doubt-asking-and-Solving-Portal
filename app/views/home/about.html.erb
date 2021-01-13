@@ -1,1 +1,63 @@
-<h1>About Us</h1>
+<%if user_signed_in?%> 
+<h1>Doubts List</h1>
+
+<table class="table table-striped table-hover table-bordered">
+   <thead class="table-dark">
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% Doubt.all.each do |doubt| %>
+    <% if doubt.status=="unresolved" %>
+      <tr>
+        <td><%= doubt.title %></td>
+        <td><%= doubt.description %></td>
+        <td><%= doubt.status %></td>
+        <td><%= link_to 'Show', doubt %></td>
+        <td><%= link_to 'Resolve', edit_doubt_path(doubt) %></td>
+        <td><%= link_to 'Resolve', doubts_resolve_path(doubt) %></td>
+      </tr>
+    <% end %>
+    <%end%>
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doubt', new_doubt_path, class:"btn btn-secondary" %>
+
+
+<%else%>
+
+<style type="text/css">
+    .jumbotron {
+      padding: 4rem 2rem;
+      margin-bottom: 2rem;
+      background-color: var(--bs-light);
+      border-radius: .3rem;  
+    }
+</style>
+
+<div class="jumbotron">
+  <h1 class="display-4">
+   <h3>Please Sign In</h3>
+    <br>
+  </h1>
+
+  <p class="lead">
+      
+  <hr class="my-4">
+  If new to Portal please Sign Up
+</div>
+
+
+
+
+<%end%>

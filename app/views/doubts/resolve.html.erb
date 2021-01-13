@@ -1,0 +1,46 @@
+<h1>Resolving Doubt</h1>
+<%
+=begin%>
+ <br/>
+<%= render 'form', doubt: @doubt %>
+<br/>
+<%= link_to 'Show', @doubt, class:'btn btn-secondary' %> 
+<%= link_to 'Back', doubts_path,class:'btn btn-dark' %>
+ 
+ 
+<%
+=end%>
+
+
+
+<%
+=begin%>
+ <h1>Resolve Doubt</h1> 
+<%
+=end%>
+<%
+=begin%>
+ <br/>
+      <h2>Add Answer:</h2>
+        <%= form_with model: [ @doubt, @doubt.comments.build ] do |form| %>
+        <p>
+          <% form.label :commenter %><br>
+          <%= form.text_field :commenter, placeholder: "Teacher Name" %>
+        </p>
+        <p>
+          <% form.label :body %><br>
+          <%= form.text_area :body, placeholder:"Write your Answer"  %>
+        </p>
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
+<br/> 
+<%
+=end%>
+<%
+=begin%>
+ <%= link_to 'Show', @doubt, class:'btn btn-secondary' %> 
+<%= link_to 'Back', doubts_path,class:'btn btn-dark' %> 
+<%
+=end%>
