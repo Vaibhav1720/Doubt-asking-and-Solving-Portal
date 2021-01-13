@@ -1,6 +1,6 @@
 class DoubtsController < ApplicationController
   before_action :set_doubt, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /doubts
   # GET /doubts.json
   def index
@@ -60,6 +60,7 @@ class DoubtsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +70,6 @@ class DoubtsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def doubt_params
-      params.require(:doubt).permit(:title, :description, :status)
+      params.require(:doubt).permit(:title, :description, :status, :user_id)
     end
 end

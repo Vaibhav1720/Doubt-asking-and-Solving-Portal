@@ -4,14 +4,18 @@
 
 
         <li class="nav-item">
-             <%= link_to "Teacher", root_path, class: "nav-link active" %>
+             <%= link_to "Doubts", root_path, class: "nav-link active" %>
         </li>
         <li class="nav-item">
-             <%= link_to "Doubts", doubts_path, class: "nav-link active" %>
+             <%= link_to "Teachers", doubts_path, class: "nav-link active" %>
         </li>
-        <li class="nav-item">
+        <%
+=begin%>
+ <li class="nav-item">
           <%= link_to "Student", home_about_path, class: "nav-link active" %>
-        </li>
+        </li> 
+<%
+=end%>
         <li class="nav-item">
           <%= link_to "Ask Doubt", new_doubt_path, class: "nav-link active" %>
         </li>
