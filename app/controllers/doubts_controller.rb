@@ -60,7 +60,7 @@ class DoubtsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+   
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -70,6 +70,6 @@ class DoubtsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def doubt_params
-      params.require(:doubt).permit(:title, :description, :status, :user_id)
+      params.require(:doubt).permit(:title, :description, :status, :user_id,:doubt_id)
     end
 end

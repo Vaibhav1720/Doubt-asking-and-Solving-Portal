@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   end
 
 
-  resources :doubts
+  resources :doubts do
+    resources :comments
+  end
+  # resources :doubts
   # get 'home/index'
   get 'home/about'
   # root 'home#index'
