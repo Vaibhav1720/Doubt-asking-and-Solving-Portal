@@ -6,7 +6,7 @@ class DoubtsController < ApplicationController
   def index
     @doubts = Doubt.all
   end
- 
+  
   # GET /doubts/1
   # GET /doubts/1.json
   def show
@@ -15,10 +15,12 @@ class DoubtsController < ApplicationController
   # GET /doubts/new
   def new
     @doubt = Doubt.new
+
   end
 
   # GET /doubts/1/edit
   def edit
+    @doubt = Doubt.find(params[:id])
   end
 
   def resolve
@@ -68,8 +70,8 @@ class DoubtsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_doubt
-      @doubt = Doubt.find(params[:id])
-      #@doubt = Doubt.find_by(id: params[:id])
+      #@doubt = Doubt.find(params[:id])
+      @doubt = Doubt.find_by(id: params[:id])
       #@doubt = Doubt.require(:doubt).permit(:title, :description)
     end
 
