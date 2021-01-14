@@ -20,8 +20,12 @@
         <td><%= doubt.description %></td>
         <td><%= doubt.status %></td>
         <td><%= link_to 'Show', doubt %></td>
-        <td><%= link_to 'Resolve', edit_doubt_path(doubt) %></td>
-        <td><%= link_to 'Resolve', doubts_resolve_path(doubt) %></td>
+        <td><%= link_to 'Accept', edit_doubt_path(doubt) %></td>
+        <%
+=begin%>
+ <td><%= link_to 'Resolve', doubts_resolve_path(doubt) %></td> 
+<%
+=end%>
       </tr>
     <% end %>
     <%end%>
